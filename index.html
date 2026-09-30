@@ -3,29 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>خزفيات | Ceramic Art</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<title>سما |شلبي خزف وفخار</title>
+<link "IMG-20260930-WA0033.jpg" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* ===== 🎨 ألوان اللوجو ===== */
 :root {
-    --sky: #a8d5e2;
-    --sky-light: #e0eef7;
-    --earth: #d4b896;
-    --earth-dark: #8B4513;
-    --green: #7ba05b;
-    --green-light: #d4e8c4;
-    --red: #c0392b;
-    --yellow: #f4c430;
-    --ink: #1a1a1a;
-    --cream: #faf6f0;
-    --white: #fff;
+    --navy: #1a3a6b;         /* كحلي غامق (اللون الأساسي) */
+    --navy-dark: #0f2547;    /* كحلي أغمق */
+    --navy-light: #2c5aa0;   /* كحلي فاتح */
+    --gold: #f4b942;         /* ذهبي (لون الكتابة) */
+    --gold-dark: #d99a1f;    /* ذهبي غامق */
+    --gold-light: #ffd97a;   /* ذهبي فاتح */
+    --cream: #fdfaf3;        /* كريمي (الخلفية) */
+    --cream-dark: #f5efe0;   /* كريمي غامق */
+    --turquoise: #3aa8a8;    /* تركواز (من الجرة) */
+    --orange: #d97742;       /* برتقالي (من الجرة) */
+    --brown: #8b5a3c;        /* بني (من الجرة) */
+    --white: #ffffff;
 }
 
 body {
     font-family: 'Cairo', sans-serif;
     background: var(--cream);
-    color: var(--ink);
+    color: var(--navy);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -35,86 +37,117 @@ body {
 /* ===== Header ===== */
 .header {
     background: var(--white);
-    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 20px rgba(26,58,107,0.1);
     position: sticky; top: 0; z-index: 100;
+    border-bottom: 3px solid var(--navy);
 }
 .header .container {
     display: flex; justify-content: space-between; align-items: center;
     padding: 15px 20px; flex-wrap: wrap; gap: 15px;
 }
-.logo { display: flex; align-items: center; gap: 10px; }
-.logo-icon { font-size: 2rem; }
+.logo { display: flex; align-items: center; gap: 12px : }
+.logo-img {
+    width: 65px; height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--navy);
+    box-shadow: 0 4px 12px rgba(26,58,107,0.2);
+}
 .logo h1 {
-    font-size: 1.8rem; font-weight: 900; color: var(--earth-dark);
+    font-size: 1.9rem; font-weight: 900;
+    color: var(--navy);
     letter-spacing: -1px;
 }
+.logo h1 span { color: var(--gold-dark); }
+
 .nav { display: flex; gap: 25px; align-items: center; flex-wrap: wrap; }
 .nav a {
-    text-decoration: none; color: var(--ink); font-weight: 600;
-    transition: color 0.3s; position: relative;
+    text-decoration: none; color: var(--navy);
+    font-weight: 700; transition: color 0.3s;
+    position: relative;
 }
-.nav a:hover { color: var(--earth-dark); }
+.nav a:hover { color: var(--gold-dark); }
 .nav a::after {
     content: ''; position: absolute; bottom: -5px; right: 0;
-    width: 0; height: 2px; background: var(--earth-dark);
-    transition: width 0.3s;
+    width: 0; height: 3px; background: var(--gold);
+    transition: width 0.3s; border-radius: 3px;
 }
 .nav a:hover::after { width: 100%; }
 .cart-btn {
-    background: var(--earth-dark) !important; color: white !important;
-    padding: 10px 18px; border-radius: 25px; display: flex;
-    align-items: center; gap: 8px; cursor: pointer;
+    background: var(--navy) !important; color: var(--white) !important;
+    padding: 10px 20px; border-radius: 30px;
+    display: flex; align-items: center; gap: 8px;
+    cursor: pointer; transition: all 0.3s;
 }
 .cart-btn::after { display: none; }
-.cart-btn:hover { background: var(--earth) !important; }
+.cart-btn:hover { background: var(--gold-dark) !important; color: var(--navy) !important; }
 .cart-count {
-    background: var(--yellow); color: var(--ink);
-    padding: 2px 9px; border-radius: 50%; font-weight: 900; font-size: 0.85rem;
+    background: var(--gold); color: var(--navy);
+    padding: 2px 9px; border-radius: 50%;
+    font-weight: 900; font-size: 0.85rem;
 }
 
 /* ===== Hero ===== */
 .hero {
-    background: linear-gradient(135deg, var(--sky-light) 0%, var(--cream) 50%, var(--green-light) 100%);
-    padding: 80px 0; position: relative; overflow: hidden;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(244,185,66,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(58,168,168,0.1) 0%, transparent 50%),
+        linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+    padding: 80px 0;
+    position: relative; overflow: hidden;
+    border-bottom: 5px double var(--navy);
 }
 .hero::before {
-    content: '🏺'; position: absolute; font-size: 20rem;
-    opacity: 0.06; top: -50px; left: -30px; transform: rotate(-15deg);
+    content: '🏺'; position: absolute;
+    font-size: 22rem; opacity: 0.05;
+    top: -50px; left: -30px;
+    transform: rotate(-15deg);
 }
 .hero::after {
-    content: '🌴'; position: absolute; font-size: 15rem;
-    opacity: 0.06; bottom: -40px; right: -20px; transform: rotate(15deg);
+    content: '✨'; position: absolute;
+    font-size: 12rem; opacity: 0.08;
+    bottom: -30px; right: 20px;
 }
 .hero-content {
     display: grid; grid-template-columns: 1fr 1fr;
-    gap: 50px; align-items: center; position: relative; z-index: 2;
+    gap: 50px; align-items: center;
+    position: relative; z-index: 2;
 }
 .hero-text h2 {
-    font-size: 3.5rem; font-weight: 900; color: var(--earth-dark);
-    line-height: 1.2; margin-bottom: 20px;
+    font-size: 3.5rem; font-weight: 900;
+    color: var(--navy); line-height: 1.2;
+    margin-bottom: 20px;
 }
 .hero-text h2 span {
-    background: linear-gradient(transparent 60%, var(--yellow) 60%);
+    background: linear-gradient(transparent 55%, var(--gold-light) 55%);
     padding: 0 5px;
+    color: var(--gold-dark);
 }
 .hero-text p {
-    font-size: 1.2rem; color: #555; margin-bottom: 30px; line-height: 1.8;
+    font-size: 1.2rem; color: #4a5a7a;
+    margin-bottom: 30px; line-height: 1.8;
 }
 .btn-primary {
-    display: inline-block; background: var(--earth-dark); color: white;
-    padding: 15px 40px; border-radius: 50px; text-decoration: none;
-    font-weight: 700; font-size: 1.1rem; border: none; cursor: pointer;
-    transition: all 0.3s; box-shadow: 0 8px 20px rgba(139,69,19,0.3);
+    display: inline-block;
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    color: var(--white);
+    padding: 16px 45px; border-radius: 50px;
+    text-decoration: none; font-weight: 800;
+    font-size: 1.1rem; border: none; cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 8px 20px rgba(26,58,107,0.3);
     font-family: inherit;
 }
 .btn-primary:hover {
-    background: var(--earth); transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(139,69,19,0.4);
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    color: var(--navy);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(244,185,66,0.5);
 }
 .hero-image {
     font-size: 15rem; text-align: center;
     animation: float 4s ease-in-out infinite;
-    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));
+    filter: drop-shadow(0 20px 30px rgba(26,58,107,0.2));
 }
 @keyframes float {
     0%, 100% { transform: translateY(0); }
@@ -123,12 +156,16 @@ body {
 
 /* ===== Sections ===== */
 .section-title {
-    font-size: 2.5rem; font-weight: 900; text-align: center;
-    color: var(--ink); margin-bottom: 3rem; position: relative;
+    font-size: 2.5rem; font-weight: 900;
+    text-align: center; color: var(--navy);
+    margin-bottom: 3rem; position: relative;
 }
 .section-title::after {
-    content: '〰️〰️〰️'; display: block; font-size: 1.2rem;
-    color: var(--sky); margin-top: 0.5rem; letter-spacing: 5px;
+    content: '◆ ◆ ◆';
+    display: block; font-size: 1rem;
+    color: var(--gold);
+    margin-top: 0.7rem;
+    letter-spacing: 8px;
 }
 
 /* ===== Products ===== */
@@ -139,56 +176,86 @@ body {
     gap: 30px;
 }
 .product-card {
-    background: var(--white); border-radius: 20px; overflow: hidden;
-    box-shadow: 0 8px 25px rgba(139,69,19,0.12);
-    transition: all 0.4s ease; position: relative; cursor: pointer;
+    background: var(--white);
+    border-radius: 20px; overflow: hidden;
+    box-shadow: 0 8px 25px rgba(26,58,107,0.12);
+    transition: all 0.4s ease;
+    position: relative; cursor: pointer;
+    border: 2px solid transparent;
 }
 .product-card::before {
     content: ''; position: absolute; inset: 8px;
-    border: 2px dashed rgba(139,69,19,0.25); border-radius: 14px;
+    border: 2px dashed rgba(26,58,107,0.2);
+    border-radius: 14px;
     pointer-events: none; z-index: 2;
 }
 .product-card:hover {
     transform: translateY(-10px) rotate(-1deg);
-    box-shadow: 0 20px 40px rgba(139,69,19,0.25);
+    box-shadow: 0 20px 40px rgba(26,58,107,0.25);
+    border-color: var(--gold);
 }
 .product-image {
-    height: 220px; display: flex; align-items: center; justify-content: center;
-    font-size: 6rem; position: relative; overflow: hidden;
+    height: 220px; display: flex;
+    align-items: center; justify-content: center;
+    font-size: 6rem; position: relative;
+    overflow: hidden;
 }
 .product-image span {
     transition: transform 0.4s; z-index: 1;
 }
-.product-card:hover .product-image span { transform: scale(1.15) rotate(-5deg); }
+.product-card:hover .product-image span {
+    transform: scale(1.15) rotate(-5deg);
+}
 .product-info { padding: 20px; position: relative; z-index: 3; }
 .product-info h3 {
-    font-size: 1.3rem; font-weight: 800; color: var(--ink); margin-bottom: 5px;
+    font-size: 1.3rem; font-weight: 800;
+    color: var(--navy); margin-bottom: 5px;
 }
-.product-info p { color: #777; font-size: 0.95rem; margin-bottom: 15px; }
+.product-info p { color: #7a8aa0; font-size: 0.95rem; margin-bottom: 15px; }
 .product-bottom {
     display: flex; justify-content: space-between; align-items: center;
 }
-.price { font-size: 1.4rem; font-weight: 900; color: var(--earth-dark); }
-.add-btn {
-    background: var(--green); color: white; border: none;
-    padding: 10px 20px; border-radius: 25px; cursor: pointer;
-    font-family: inherit; font-weight: 700; font-size: 0.9rem;
-    transition: all 0.3s;
+.price {
+    font-size: 1.4rem; font-weight: 900;
+    color: var(--gold-dark);
 }
-.add-btn:hover { background: var(--earth-dark); transform: scale(1.05); }
+.add-btn {
+    background: var(--navy); color: var(--white);
+    border: none; padding: 10px 22px;
+    border-radius: 25px; cursor: pointer;
+    font-family: inherit; font-weight: 700;
+    font-size: 0.9rem; transition: all 0.3s;
+}
+.add-btn:hover {
+    background: var(--gold); color: var(--navy);
+    transform: scale(1.05);
+}
 
 /* ===== About ===== */
 .about {
-    padding: 80px 0; background: var(--sky-light); position: relative; overflow: hidden;
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    position: relative; overflow: hidden;
+    color: var(--white);
 }
 .about::before {
-    content: '🎨'; position: absolute; font-size: 15rem;
-    opacity: 0.05; top: 20px; left: 20px;
+    content: '🏺'; position: absolute;
+    font-size: 18rem; opacity: 0.05;
+    top: 20px; left: 20px;
 }
+.about::after {
+    content: '✨'; position: absolute;
+    font-size: 12rem; opacity: 0.05;
+    bottom: -30px; right: 30px;
+}
+.about .section-title { color: var(--white); }
+.about .section-title::after { color: var(--gold); }
 .about-text {
-    max-width: 800px; margin: 0 auto; text-align: center;
-    font-size: 1.2rem; line-height: 2; color: #444;
+    max-width: 800px; margin: 0 auto;
+    text-align: center; font-size: 1.2rem;
+    line-height: 2; color: var(--cream);
     position: relative; z-index: 2;
+    opacity: 0.95;
 }
 
 /* ===== Contact ===== */
@@ -199,40 +266,48 @@ body {
 }
 .contact-form input,
 .contact-form textarea {
-    padding: 15px 20px; border: 2px solid var(--earth);
-    border-radius: 12px; font-family: inherit; font-size: 1rem;
-    background: var(--white); outline: none; transition: all 0.3s;
-    resize: vertical;
+    padding: 15px 20px;
+    border: 2px solid var(--navy);
+    border-radius: 12px;
+    font-family: inherit; font-size: 1rem;
+    background: var(--white); outline: none;
+    transition: all 0.3s; resize: vertical;
+    color: var(--navy);
 }
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: var(--earth-dark);
-    box-shadow: 0 0 0 4px rgba(139,69,19,0.1);
+    border-color: var(--gold);
+    box-shadow: 0 0 0 4px rgba(244,185,66,0.2);
 }
 .contact-form button { align-self: center; padding: 15px 60px; }
 
 /* ===== Cart Sidebar ===== */
 .cart-sidebar {
-    position: fixed; top: 0; left: -450px; width: 400px; height: 100%;
-    background: var(--white); box-shadow: 5px 0 30px rgba(0,0,0,0.2);
+    position: fixed; top: 0; left: -450px;
+    width: 400px; height: 100%;
+    background: var(--white);
+    box-shadow: 5px 0 30px rgba(0,0,0,0.2);
     z-index: 1000; transition: left 0.4s ease;
     display: flex; flex-direction: column;
 }
 .cart-sidebar.active { left: 0; }
 .cart-header {
-    padding: 20px; background: var(--earth-dark); color: white;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    color: var(--white);
     display: flex; justify-content: space-between; align-items: center;
 }
 .cart-header h3 { font-size: 1.4rem; }
 .close-cart {
-    background: none; border: none; color: white;
-    font-size: 1.5rem; cursor: pointer; padding: 5px 10px;
+    background: none; border: none;
+    color: var(--white); font-size: 1.5rem;
+    cursor: pointer; padding: 5px 10px;
 }
-.cart-items {
-    flex: 1; overflow-y: auto; padding: 20px;
-}
+.close-cart:hover { color: var(--gold); }
+.cart-items { flex: 1; overflow-y: auto; padding: 20px; }
 .empty-cart {
-    text-align: center; color: #999; padding: 40px 20px; font-size: 1.1rem;
+    text-align: center; color: #999;
+    padding: 40px 20px; font-size: 1.1rem;
 }
 .cart-item {
     display: flex; gap: 12px; align-items: center;
@@ -244,56 +319,69 @@ body {
     font-size: 2rem; flex-shrink: 0;
 }
 .cart-item-info { flex: 1; }
-.cart-item-info h4 { font-size: 1rem; margin-bottom: 3px; }
-.cart-item-info p { color: #777; font-size: 0.85rem; }
+.cart-item-info h4 { font-size: 1rem; margin-bottom: 3px; color: var(--navy); }
+.cart-item-info p { color: var(--gold-dark); font-size: 0.85rem; font-weight: 700; }
 .remove-btn {
-    background: var(--red); color: white; border: none;
+    background: #e74c3c; color: white; border: none;
     width: 30px; height: 30px; border-radius: 50%;
     cursor: pointer; font-size: 1rem; flex-shrink: 0;
 }
 .cart-footer {
-    padding: 20px; border-top: 2px solid #eee; background: var(--cream);
+    padding: 20px; border-top: 3px solid var(--gold);
+    background: var(--cream);
 }
 .cart-total {
     font-size: 1.3rem; font-weight: 800;
     margin-bottom: 15px; text-align: center;
+    color: var(--navy);
 }
-.cart-total span { color: var(--earth-dark); }
+.cart-total span { color: var(--gold-dark); }
 .checkout-btn { width: 100%; }
 
 .overlay {
-    position: fixed; inset: 0; background: rgba(0,0,0,0.5);
-    z-index: 999; opacity: 0; visibility: hidden; transition: all 0.4s;
+    position: fixed; inset: 0;
+    background: rgba(15,37,71,0.6);
+    z-index: 999; opacity: 0; visibility: hidden;
+    transition: all 0.4s;
 }
 .overlay.active { opacity: 1; visibility: visible; }
 
 /* ===== Toast ===== */
 .toast {
     position: fixed; bottom: 30px; right: 30px;
-    background: var(--earth-dark); color: white;
+    background: var(--navy); color: var(--white);
     padding: 15px 30px; border-radius: 50px;
-    font-weight: 700; box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(26,58,107,0.4);
     transform: translateY(100px); opacity: 0;
     transition: all 0.4s; z-index: 2000;
+    border: 2px solid var(--gold);
 }
 .toast.show { transform: translateY(0); opacity: 1; }
 
 /* ===== Footer ===== */
 .footer {
-    background: var(--ink); color: white;
+    background: var(--navy-dark); color: var(--white);
     text-align: center; padding: 30px 0;
+    border-top: 4px solid var(--gold);
 }
-.footer p { opacity: 0.8; }
+.footer p { opacity: 0.85; }
+.footer span { color: var(--gold); font-weight: 900; }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
     .header .container { justify-content: center; }
     .nav { gap: 15px; font-size: 0.9rem; }
+    .logo h1 { font-size: 1.5rem; }
+    .logo-img { width: 50px; height: 50px; }
     .hero-content { grid-template-columns: 1fr; text-align: center; }
     .hero-text h2 { font-size: 2.2rem; }
     .hero-image { font-size: 8rem; }
     .section-title { font-size: 1.8rem; }
-    .products-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
+    }
     .cart-sidebar { width: 100%; left: -100%; }
     .toast { right: 15px; left: 15px; text-align: center; }
 }
@@ -305,8 +393,9 @@ body {
 <header class="header">
     <div class="container">
         <div class="logo">
-            <span class="logo-icon">🏺</span>
-            <h1>خزفيات</h1>
+            <!-- ⚠️ غيّر اسم الصورة حسب ما تسميها في الريبو -->
+            <img src="logo.png" alt="سما - خزف وفخار" class="logo-img">
+            <h1>سما <span>خزف وفخار</span></h1>
         </div>
         <nav class="nav">
             <a href="#home">الرئيسية</a>
@@ -325,7 +414,7 @@ body {
     <div class="container hero-content">
         <div class="hero-text">
             <h2>فن <span>الخزف</span> اليدوي الأصيل</h2>
-            <p>قطع خزفية فريدة مصنوعة بإيدينا بحب وإتقان، تجمع بين الأصالة المصرية واللمسة الفنية الحديثة</p>
+            <p>قطع خزفية فريدة مصنوعة بإيدينا بحب وإتقان، تجمع بين الأصالة واللمسة الفنية الحديثة</p>
             <a href="#products" class="btn-primary">تسوق الآن 🛍️</a>
         </div>
         <div class="hero-image">🏺</div>
@@ -345,9 +434,9 @@ body {
     <div class="container">
         <h2 class="section-title">من نحن</h2>
         <p class="about-text">
-            ورشة خزفية متخصصة في صناعة القطع اليدوية الفريدة. كل قطعة بتتعمل بإيدينا بمهارة وحب،
-            وبتعدي على مراحل دقيقة من التشكيل والرسم والحرق لحد ما توصل لك بأحلى شكل.
-            بنقدم فن أصيل بلمسة مصرية ريفية 🏺🌴
+            ورشة <strong>سما للخزف والفخار</strong> متخصصة في صناعة القطع اليدوية الفريدة.
+            كل قطعة بتتعمل بإيدينا بمهارة وحب، وبتعدي على مراحل دقيقة من التشكيل والرسم والحرق
+            لحد ما توصل لك بأحلى شكل. بنقدم فن أصيل بلمسة مصرية ريفية 🏺✨
         </p>
     </div>
 </section>
@@ -384,22 +473,22 @@ body {
 <!-- Footer -->
 <footer class="footer">
     <div class="container">
-        <p>© 2025 خزفيات 🏺 - جميع الحقوق محفوظة</p>
+        <p>© 2025 <span>سما</span> للخزف والفخار 🏺 - جميع الحقوق محفوظة</p>
     </div>
 </footer>
 
 <script>
 // ===== المنتجات =====
 const products = [
-    { id: 1, name: "طبق بيت الريف", desc: "رسمة يدوية بخط عربي أصيل", price: 250, emoji: "🍽️", bg: "linear-gradient(135deg, #a8d5e2, #e8f4f8)" },
-    { id: 2, name: "طبق النخيل", desc: "نخيل وألوان ترابية", price: 280, emoji: "🌴", bg: "linear-gradient(135deg, #d4e8c4, #f0f7e8)" },
-    { id: 3, name: "سلطانية زرقاء", desc: "لون أزرق سماوي مموج", price: 180, emoji: "🥣", bg: "linear-gradient(135deg, #b8d4e8, #e0eef7)" },
-    { id: 4, name: "طبق الخط العربي", desc: "خط عربي بمداد أسود", price: 320, emoji: "✍️", bg: "linear-gradient(135deg, #e8dcc4, #f7f0e0)" },
-    { id: 5, name: "طبق الورد الأحمر", desc: "ورد أحمر على خلفية بيضاء", price: 220, emoji: "🌹", bg: "linear-gradient(135deg, #f5c6c6, #fde8e8)" },
-    { id: 6, name: "طقم خزف كامل", desc: "6 قطع بلمسة فنية", price: 1200, emoji: "🏺", bg: "linear-gradient(135deg, #d4b896, #f0dfc8)" }
+    { id: 1, name: "طبق بيت الريف", desc: "رسمة يدوية بخط عربي أصيل", price: 250, emoji: "🍽️", bg: "linear-gradient(135deg, #dce8f5, #eef5fb)" },
+    { id: 2, name: "طبق النخيل", desc: "نخيل وألوان ترابية", price: 280, emoji: "🌴", bg: "linear-gradient(135deg, #d4e8e8, #e8f4f4)" },
+    { id: 3, name: "سلطانية زرقاء", desc: "لون أزرق سماوي مموج", price: 180, emoji: "🥣", bg: "linear-gradient(135deg, #c8daf0, #e0eaf8)" },
+    { id: 4, name: "طبق الخط العربي", desc: "خط عربي بمداد أسود", price: 320, emoji: "✍️", bg: "linear-gradient(135deg, #f5e8c8, #fdf5e0)" },
+    { id: 5, name: "طبق الورد الأحمر", desc: "ورد أحمر على خلفية بيضاء", price: 220, emoji: "🌹", bg: "linear-gradient(135deg, #f5d4d0, #fde8e5)" },
+    { id: 6, name: "طقم خزف كامل", desc: "6 قطع بلمسة فنية", price: 1200, emoji: "🏺", bg: "linear-gradient(135deg, #e0d0b8, #f0e4d0)" }
 ];
 
-let cart = JSON.parse(localStorage.getItem('ceramicCart')) || [];
+let cart = JSON.parse(localStorage.getItem('samaCart')) || [];
 
 // ===== عرض المنتجات =====
 function renderProducts() {
@@ -420,19 +509,17 @@ function renderProducts() {
     `).join('');
 }
 
-// ===== إضافة للسلة =====
 function addToCart(id) {
     const product = products.find(p => p.id === id);
     const existing = cart.find(item => item.id === id);
     if (existing) existing.qty++;
     else cart.push({ ...product, qty: 1 });
-    saveCart();
-    updateCartUI();
+    saveCart(); updateCartUI();
     showToast(`تمت إضافة "${product.name}" ✓`);
 }
 
 function saveCart() {
-    localStorage.setItem('ceramicCart', JSON.stringify(cart));
+    localStorage.setItem('samaCart', JSON.stringify(cart));
 }
 
 function updateCartUI() {
@@ -460,8 +547,7 @@ function updateCartUI() {
 
 function removeFromCart(id) {
     cart = cart.filter(item => item.id !== id);
-    saveCart();
-    updateCartUI();
+    saveCart(); updateCartUI();
 }
 
 // ===== السلة =====
@@ -484,12 +570,12 @@ function closeCart() {
 document.getElementById('checkoutBtn').onclick = () => {
     if (cart.length === 0) return showToast('السلة فاضية!');
     const total = cart.reduce((s, i) => s + (i.price * i.qty), 0);
-    const msg = 'السلام عليكم، عايز أطلب:\n\n' +
+    const msg = 'السلام عليكم، عايز أطلب من سما للخزف:\n\n' +
         cart.map(i => `• ${i.name} × ${i.qty} = ${i.price * i.qty} ج.م`).join('\n') +
         `\n\nالإجمالي: ${total} ج.م`;
 
-    // ⚠️ غيّر الرقم ده لرقم واتساب بتاعك (بدون + وبدون 00)
-    const phone = "201000000000";
+    // ⚠️ غيّر الرقم ده لرقم واتساب بتاعك
+    const phone = "01024275031";
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
 };
 
@@ -513,7 +599,6 @@ document.getElementById('contactForm').onsubmit = (e) => {
     e.target.reset();
 };
 
-// ===== تشغيل =====
 renderProducts();
 updateCartUI();
 </script>
